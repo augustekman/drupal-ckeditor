@@ -8,6 +8,11 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
  * The 'Styles' button is not enabled by default in DrupalFull and DrupalFiltered toolbars.
  */
 if(typeof(CKEDITOR) !== 'undefined') {
+    
+    /**
+     * If using a custom ckeditor.styles.js – replace 'drupal' with your ckeditor instance's machine name.
+     */
+    
     CKEDITOR.addStylesSet( 'drupal',
     [
             /* Block Styles */

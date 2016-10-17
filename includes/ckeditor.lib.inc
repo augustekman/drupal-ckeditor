@@ -923,11 +923,11 @@ function ckeditor_profile_settings_compile($global_profile, $profile) {
   $settings['stylesCombo_stylesSet'] = "drupal:" . $module_drupal_path . '/ckeditor.styles.js';
   if (!empty($conf['css_style'])) {
     if ($conf['css_style'] == 'theme' && file_exists($themepath . 'ckeditor.styles.js')) {
-      $settings['stylesCombo_stylesSet'] = "drupal:" . $host . $themepath . 'ckeditor.styles.js';
+      $settings['stylesCombo_stylesSet'] = $profile_name . ':' . $host . $themepath . 'ckeditor.styles.js';
     }
     elseif (!empty($conf['css_style']) && $conf['css_style'] == 'self') {
       $conf['styles_path'] = str_replace("%h%t", "%t", $conf['styles_path']);
-      $settings['stylesCombo_stylesSet'] = "drupal:" . str_replace(array('%h', '%t', '%m'), array($host, $host . $themepath, $module_drupal_path), $conf['styles_path']);
+      $settings['stylesCombo_stylesSet'] = $profile_name . ':' . str_replace(array('%h', '%t', '%m'), array($host, $host . $themepath, $module_drupal_path), $conf['styles_path']);
     }
   }
 
